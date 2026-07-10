@@ -1,3 +1,5 @@
+import { WaitlistButton } from "@/components/marketing/waitlist-button";
+
 type HeroProps = {
   headline: string;
   subtext: string;
@@ -10,6 +12,7 @@ export function Hero({ headline, subtext }: HeroProps) {
         {headline}
       </h1>
       <p className="mt-4 max-w-xl text-lg text-zinc-600">{subtext}</p>
+      <WaitlistButton />
     </section>
   );
 }
