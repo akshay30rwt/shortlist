@@ -1,9 +1,14 @@
 import { NextResponse } from "next/server";
 
 export async function GET() {
-  const secret = process.env.AUTH_SECRET;
   return NextResponse.json({
-    exists: secret !== undefined,
-    length: secret?.length ?? 0,
+    authSecret: {
+      exists: process.env.AUTH_SECRET !== undefined,
+      length: process.env.AUTH_SECRET?.length ?? 0,
+    },
+    mongoUri: {
+      exists: process.env.MONGODB_URI !== undefined,
+      length: process.env.MONGODB_URI?.length ?? 0,
+    },
   });
 }
