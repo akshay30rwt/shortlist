@@ -10,5 +10,7 @@ export async function GET() {
       exists: process.env.MONGODB_URI !== undefined,
       length: process.env.MONGODB_URI?.length ?? 0,
     },
+    vercelEnv: process.env.VERCEL_ENV ?? "MISSING",
+    nodeEnv: process.env.NODE_ENV ?? "MISSING",
   });
 }
